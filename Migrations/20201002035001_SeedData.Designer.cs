@@ -8,7 +8,7 @@ using Stats.Models;
 namespace Stats.Migrations
 {
     [DbContext(typeof(StatsContext))]
-    [Migration("20201002032124_SeedData")]
+    [Migration("20201002035001_SeedData")]
     partial class SeedData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

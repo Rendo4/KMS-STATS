@@ -25,7 +25,7 @@ namespace Stats.Controllers
 
       if (summoner != null)
       {
-        query = query.Where(entry => entry.Summoner = summoner);
+        query = query.Where(entry => entry.Summoner == summoner);
       }
 
       if (champion != null)
@@ -40,9 +40,9 @@ namespace Stats.Controllers
 
       if (opponent != null)
       {
-        query = query.Where(entry => entry.opponent == opponent);
+        query = query.Where(entry => entry.Opponent == opponent);
       }
-      return _db.Players.ToList();
+       return query.ToList();
     }
 
     // POST api/player

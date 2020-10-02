@@ -8,7 +8,7 @@ using Stats.Models;
 namespace Stats.Migrations
 {
     [DbContext(typeof(StatsContext))]
-    [Migration("20201002031831_Initial")]
+    [Migration("20201002034937_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
