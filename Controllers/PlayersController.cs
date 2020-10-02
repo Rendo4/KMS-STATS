@@ -19,8 +19,29 @@ namespace Stats.Controllers
 
     // GET api/players
     [HttpGet]
-    public ActionResult<IEnumerable<Player>> Get()
+    public ActionResult<IEnumerable<Player>> Get(string summoner, string champion, string team, string opponent)
     {
+      var query = _db.Players.AsQueryable();
+
+      if (summoner != null)
+      {
+        query = query.Where(entry => entry.Summoner = summoner);
+      }
+
+      if (champion != null)
+      {
+        query = query.Where(entry => entry.Champion == champion);
+      }
+
+      if (team != null)
+      {
+        query = query.Where(entry => entry.Team == team);
+      }
+
+      if (opponent != null)
+      {
+        query = query.Where(entry => entry.opponent == opponent);
+      }
       return _db.Players.ToList();
     }
 
